@@ -7,14 +7,19 @@
     <body>
    		<!-- header -->
         <th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
+        <div>
         
         <!-- content -->
         <th:block layout:fragment="content"></th:block>
     
+        </div>
     	<!-- footer -->
         <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
     </body>
     
     <!-- 공통 스크립트 -->
     <th:block th:replace="~{fragments/footerScript :: footerScriptFragment}"></th:block>
+    
+    <!-- 페이지별 스크립트 -->
+    <th:block layout:fragment="script"></th:block>
 </html>
