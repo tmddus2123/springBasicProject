@@ -8,6 +8,7 @@ public class PageController {
 	
 	@GetMapping("/main")
 	public String Home() {
+		
 		return "main";
 	}
 }
