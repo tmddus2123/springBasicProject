@@ -36,8 +36,6 @@ public class ResponseAdviceConfig implements ResponseBodyAdvice {
         if (resolve == null) {
             return body;
         }
-
-        System.out.println(status);
         
         if (resolve.is2xxSuccessful()) {
             return new ResponseDto(status, "success",  body);
