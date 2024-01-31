@@ -23,17 +23,24 @@ repositories {
 }
 
 dependencies {
+	// thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 	
-	
-	
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// mybatis	
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+
+	// mysql
+    runtimeOnly 'mysql:mysql-connector-java
+    
+    // log4j
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {
