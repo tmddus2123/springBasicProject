@@ -31,7 +31,8 @@ dependencies {
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
 
 	// mysql
-    runtimeOnly 'mysql:mysql-connector-java
+   	runtimeOnly 'com.mysql:mysql-connector-j'
+
     
     // log4j
 	compileOnly 'org.projectlombok:lombok'
