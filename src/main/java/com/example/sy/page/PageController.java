@@ -7,9 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PageController {
 	
 	@GetMapping("/main")
-	public String Home() {
-		// fork 테스트
+	public String Main() {
 
 		return "main";
+	}
+	
+	@GetMapping("/login")
+	public String Login() {
+		
+		return "auth/login";
 	}
 }
