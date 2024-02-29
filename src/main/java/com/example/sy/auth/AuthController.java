@@ -17,6 +17,7 @@ public class AuthController {
 	@RequestMapping("/login")
 	public Map<String, Object> login(@RequestBody Map<String, Object> param) throws Exception {
 		
+		
 		return authService.login(param);
 	}
 }
