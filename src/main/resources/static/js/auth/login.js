@@ -44,6 +44,8 @@ const login = (function() {
 				} else if(result.header.code == 1001) {
 					
 				}
+			}).then(error => {
+				
 			});
 		},
 	}
