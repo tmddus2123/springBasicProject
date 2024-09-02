@@ -1,13 +1,13 @@
-package com.example.sy;
+package com.example.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SyProjectApplication {
+public class BasicProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SyProjectApplication.class, args);
+		SpringApplication.run(BasicProjectApplication.class, args);
 	}
 
 }

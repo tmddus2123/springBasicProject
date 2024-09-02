@@ -1,4 +1,4 @@
-package com.example.sy.auth;
+package com.example.web.auth;
 
 import java.util.Map;
 
@@ -10,14 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
-	
+
 	@Autowired
 	private AuthService authService;
-	
+
 	@RequestMapping("/login")
 	public Map<String, Object> login(@RequestBody Map<String, Object> param) throws Exception {
-		
-		
+
 		return authService.login(param);
 	}
 }
