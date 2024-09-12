@@ -1,20 +1,18 @@
 package com.example.web.dto;
 
+import java.util.Map;
+
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
+@RequiredArgsConstructor
 public class ResponseDto {
-	private int code;
-	private String msg;
-	private Object data;
 
-	public ResponseDto(Object body) {
-		this.data = body;
-	}
+	private Map<String, Object> header;
+	private Map<String, Object> body;
 
-	public ResponseDto(int code, String msg, Object data) {
-		this.code = code;
-		this.msg = msg;
-		this.data = data;
+	public ResponseDto(Map<String, Object> body) {
+		this.body = body;
 	}
 }

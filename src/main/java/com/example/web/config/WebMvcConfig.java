@@ -12,12 +12,12 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 // lombok에서 자동으로 의존성 주입해주는 어노테이션
-public class WebMvcConfig implements WebMvcConfigurer{
-	private final CustomArgumentResolver customArgumentResolver;
+public class WebMvcConfig implements WebMvcConfigurer {
+	//private final CustomArgumentResolver customArgumentResolver;
 	
 	@Override
 	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
 		// TODO Auto-generated method stub
-		WebMvcConfigurer.super.addArgumentResolvers(resolvers);
+		resolvers.add(new CustomArgumentResolver());
 	}
 }

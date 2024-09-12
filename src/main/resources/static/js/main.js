@@ -18,3 +18,24 @@ $("#fetchBtn").click(function() {
 		
 	});
 });
+
+$("#testBtn").click(function() {
+	let params = new URLSearchParams({
+		test : "test!!!",
+		a : "a",
+		b : "b",
+		c : "c"
+	});
+	
+	fetch("/api/v1/auth/test", {
+		method: "POST",
+		body: params,
+		headers: {
+           "Content-type": "application/x-www-form-urlencoded",
+        },
+	})
+	.then(response => response.json())  // 서버 응답이 JSON 형식일 경우 파싱
+    .then(data => {
+        console.log(data);
+    })
+})

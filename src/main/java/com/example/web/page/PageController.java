@@ -8,13 +8,11 @@ public class PageController {
 
 	@GetMapping("/main")
 	public String Main() {
-
 		return "main";
 	}
 
 	@GetMapping("/login")
 	public String Login() {
-
 		return "auth/login";
 	}
 }
