@@ -25,7 +25,7 @@ public class AuthController {
 	
 	@PostMapping("/test")
 	public Map<String, Object> test(ResponseDto param) {
-		System.out.println("param --> " + param);
+		System.out.println("param --> " + param.getBody());
 		
 		return authService.test(param);
 	}

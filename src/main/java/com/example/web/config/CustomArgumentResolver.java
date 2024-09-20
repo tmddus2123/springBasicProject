@@ -1,5 +1,8 @@
 package com.example.web.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
@@ -25,12 +28,20 @@ public class CustomArgumentResolver implements HandlerMethodArgumentResolver{
 	@Override
 	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-		System.out.println("parameter -- > " + parameter);
-		HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
+		
+		Map<String, Object> result = new HashMap<>();
+		
+		Map<String, String[]> parameterMap = webRequest.getParameterMap();
+		
+		for(Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
+			String key = entry.getKey();
+			String value = entry.getValue()[0];
+			result.put(key, value);
+		}
 		
 	    ResponseDto responseDto = new ResponseDto();
-		System.out.println("request --> " + request.getParameterNames());
-		
+	    responseDto.setBody(result);
+	    
 		return responseDto;
 	}
 
