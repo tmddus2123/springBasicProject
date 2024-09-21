@@ -4,7 +4,7 @@ $("#fetchBtn").click(function() {
 		test : "asdf",
 	}
 	
-	fetch("/member/testFetch", {
+	fetch("/api/v1/auth/login", {
 		method: "POST",
 		body: JSON.stringify(params),
 		headers: {

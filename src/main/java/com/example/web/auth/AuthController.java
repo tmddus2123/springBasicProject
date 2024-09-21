@@ -19,7 +19,8 @@ public class AuthController {
 
 	@PostMapping("/login")
 	public Map<String, Object> login(@RequestBody Map<String, Object> param) throws Exception {
-
+		System.out.println("param --> " + param);
+	
 		return authService.login(param);
 	}
 	

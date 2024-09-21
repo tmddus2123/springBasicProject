@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -41,6 +42,7 @@ public class CustomArgumentResolver implements HandlerMethodArgumentResolver{
 		
 	    ResponseDto responseDto = new ResponseDto();
 	    responseDto.setBody(result);
+	    System.out.println("result -->" + result);
 	    
 		return responseDto;
 	}
